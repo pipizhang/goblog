@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title><%= @title.present? ? "#{@title} - #{APP_CONFIG['site_title']}": APP_CONFIG['site_title'] %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="keywords" content="" />
+<meta name="description" content="<%= @description || APP_CONFIG['site_description'] %>" />
+<meta name="robots" content="index,follow" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<head>
+<body>
+<div class="wrap">
+<%= yield %>
+</div>
+<%= javascript_include_tag 'jquery', 'jquery-ujs', 'application' %>
+<%= yield_content :javascript %>
+</body>
+</html>
